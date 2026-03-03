@@ -40,66 +40,44 @@
 <body class="bg-[#FDF6F9] text-[#2E2E2E]">
 
   <!-- Navbar -->
-  <nav class="flex justify-between items-center px-10 py-6">
-    <h1 class="text-xl font-semibold text-[#E8A0BF]">Putri Nabila</h1>
-    <ul class="hidden md:flex space-x-8 font-medium">
-      
-      <ul class="hidden md:flex space-x-10 font-medium text-gray-700">
-    <li>
-      <a href="#home" 
-         class="relative hover:text-[#E8A0BF] transition duration-300
-                after:content-[''] after:absolute after:left-0 after:-bottom-1 
-                after:w-0 after:h-[2px] after:bg-[#E8A0BF] 
-                after:transition-all after:duration-300 
-                hover:after:w-full">
-        Home
-      </a>
-    </li>
+<nav class="fixed w-full bg-white shadow-sm z-50">
+  <div class="flex justify-between items-center px-6 md:px-10 py-4">
+    
+    <!-- Logo -->
+    <h1 class="text-xl font-semibold text-[#E8A0BF]">
+      Putri Nabila
+    </h1>
 
-    <li>
-      <a href="#about" class="relative hover:text-[#E8A0BF] transition duration-300
-                after:content-[''] after:absolute after:left-0 after:-bottom-1 
-                after:w-0 after:h-[2px] after:bg-[#E8A0BF] 
-                after:transition-all after:duration-300 
-                hover:after:w-full">
-        About
-      </a>
-    </li>
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-8 font-medium text-gray-700">
+      <li><a href="#home" class="hover:text-[#E8A0BF] transition">Home</a></li>
+      <li><a href="#about" class="hover:text-[#E8A0BF] transition">About</a></li>
+      <li><a href="#experience" class="hover:text-[#E8A0BF] transition">Experiences</a></li>
+      <li><a href="#projects" class="hover:text-[#E8A0BF] transition">Projects</a></li>
+      <li><a href="#certificates" class="hover:text-[#E8A0BF] transition">Certificates</a></li>
+    </ul>
 
-    <li>
-      <a href="#experience" class="relative hover:text-[#E8A0BF] transition duration-300
-                after:content-[''] after:absolute after:left-0 after:-bottom-1 
-                after:w-0 after:h-[2px] after:bg-[#E8A0BF] 
-                after:transition-all after:duration-300 
-                hover:after:w-full">
-        Experiences
-      </a>
-    </li>
+    <!-- Hamburger Button -->
+    <button id="menu-btn" class="md:hidden text-2xl text-gray-700">
+      ☰
+    </button>
+  </div>
 
-    <li>
-      <a href="#projects" class="relative hover:text-[#E8A0BF] transition duration-300
-                after:content-[''] after:absolute after:left-0 after:-bottom-1 
-                after:w-0 after:h-[2px] after:bg-[#E8A0BF] 
-                after:transition-all after:duration-300 
-                hover:after:w-full">
-        Projects
-      </a>
-    </li>
-
-    <li>
-      <a href="#certificates" class="relative hover:text-[#E8A0BF] transition duration-300
-                after:content-[''] after:absolute after:left-0 after:-bottom-1 
-                after:w-0 after:h-[2px] after:bg-[#E8A0BF] 
-                after:transition-all after:duration-300 
-                hover:after:w-full">
-        Certificates
-      </a>
-    </li>
-  </ul>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+    <ul class="flex flex-col space-y-4 font-medium text-gray-700">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experiences</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+    </ul>
+  </div>
 </nav>
 
   <!-- Hero Section -->
-<section class="min-h-screen flex flex-col md:flex-row items-center justify-between px-10 md:px-20 pb-20">
+  <section id="home" class="pt-24 min-h-screen flex 
+  flex-col md:flex-row items-center justify-between px-6 md:px-20 pb-20">
 
   <!-- LEFT SIDE (TEXT) -->
   <div class="md:w-1/2">
@@ -110,8 +88,8 @@
     </h2>
 
     <p class="mt-6 text-lg text-gray-600 leading-relaxed">
-      Informatics student passionate about transforming data into meaningful insights 
-      using SQL, Python, and Excel to support smarter decision-making.
+    Informatics student with experience in data analysis, web development, and mobile application development.
+    Skilled in managing large datasets and building data-driven systems, with a strong interest in transitioning into a Data Analyst role.
     </p>
 
     <!-- Main Buttons -->
@@ -121,7 +99,7 @@
          View Projects
       </a>
 
-      <a href="#" 
+      <a href="https://drive.google.com/file/d/1ruu0efixh7esp2lMwzfOl8rhYrBVi_Y-/view?usp=sharing" 
          class="px-6 py-3 border border-[#E8A0BF] text-[#E8A0BF] rounded-full hover:bg-[#E8A0BF] hover:text-white transition">
          Download CV
       </a>
@@ -149,7 +127,7 @@
              class="w-7 h-7 object-contain">
       </a>
 
-      <a href="https://linkedin.com/in/itsme-putri-nabila" target="_blank"
+      <a href="https://linkedin.com/in/me-putrinabila" target="_blank"
          class="w-14 h-14 flex items-center justify-center bg-[#FCE4EC] rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition duration-300">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
              class="w-7 h-7 object-contain">
@@ -1157,5 +1135,13 @@ function closeCertModal() {
 }
 </script>
 
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
 </body>
 </html>
